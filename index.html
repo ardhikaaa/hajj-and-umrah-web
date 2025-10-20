@@ -3,544 +3,742 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>project portofolio</title>
-    <!-- css bs -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- css ex -->
-    <link rel="stylesheet" href="style.css">
-    <!-- font -->
+    <title>PilgrimPaths - Agensi Haji & Umrah</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- icon -->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
-    <!-- Bandar Udara Internasional Raja Abdulaziz (BUIRA) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'poppins': ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#c2e854',
+              'dark-blue': '#0f2650',
+            },
+            zIndex: {
+              '60': '60',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+      
+      /* Custom checkbox styling */
+      input[type="checkbox"]:checked {
+        background-color: #c2e854;
+      }
+    </style>
   </head>
-  <body id="index.html">
-
+  <body id="index.html" class="bg-gray-50">
+ 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-            <div class="container d-flex justify-content-between" >
-          <a class="navbar-brand" href="#">PilgrimPaths</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center py-4">
+            <a class="text-xl font-bold text-dark-blue flex items-center" href="index.html">
+              <img src="kaaba.png" alt="PilgrimPaths" class="h-8 w-8 mr-2">
+              PilgrimPaths
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-6">
+              <a class="nav-link text-primary font-medium" href="index.html">Home</a>
+              
+              <!-- Dropdown for Paket Umrah -->
+              <div class="relative group">
+                <button class="nav-link text-gray-700 hover:text-primary transition-colors flex items-center">
                   Paket Umrah
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="packages.html#paketumrah">Reguler</a></li>
-                  <li><a class="dropdown-item" href="packages.html#paketumrah">Plus</a></li>
-                  <li><a class="dropdown-item" href="packages.html#paketumrah">VIP</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="packages.html#pakethaji" role="button" aria-expanded="false">
-                  Paket Haji
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="galeri.html" role="button" aria-expanded="false">
-                 Galeri
-                </a>
-              </li>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-60">
+                  <a href="packages.html#paketumrah" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Reguler</a>
+                  <a href="packages.html#paketumrah" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Plus</a>
+                  <a href="packages.html#paketumrah" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">VIP</a>
+                </div>
+              </div>
+              
+              <a class="nav-link text-gray-700 hover:text-primary transition-colors" href="packages.html#pakethaji">Paket Haji</a>
+              <a class="nav-link text-gray-700 hover:text-primary transition-colors" href="galeri.html">Galeri</a>
+              
+              <a href="login.html">
+                <button type="button" class="bg-primary text-dark-blue font-medium py-2 px-4 rounded-md hover:bg-opacity-90 transition-all">Log In</button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile menu -->
+          <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <a class="block py-2 text-gray-700 hover:text-primary" href="index.html">Home</a>
+            <div class="py-2">
+              <p class="text-gray-700">Paket Umrah</p>
+              <div class="pl-4">
+                <a class="block py-1 text-sm text-gray-600 hover:text-primary" href="packages.html#paketumrah">Reguler</a>
+                <a class="block py-1 text-sm text-gray-600 hover:text-primary" href="packages.html#paketumrah">Plus</a>
+                <a class="block py-1 text-sm text-gray-600 hover:text-primary" href="packages.html#paketumrah">VIP</a>
+              </div>
+            </div>
+            <a class="block py-2 text-gray-700 hover:text-primary" href="packages.html#pakethaji">Paket Haji</a>
+            <a class="block py-2 text-gray-700 hover:text-primary" href="galeri.html">Galeri</a>
+            <a href="login.html" class="block mt-2">
+              <button type="button" class="bg-primary text-dark-blue font-medium py-2 px-4 rounded-md hover:bg-opacity-90 transition-all w-full">Log In</button>
+            </a>
+          </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- header -->
+    <div class="relative bg-cover bg-center bg-no-repeat min-h-screen flex justify-center items-end" style="background-image: url('header.jpg');">    
+        <div class="relative container mx-auto px-4 py-24 md:py-32 text-center">
+            <h1 class="text-3xl md:text-5xl font-semibold mb-4 fade-in text-white">PilgrimPaths<br>Menghubungkan Hati, Menginspirasi Perjalanan</h1>
+            <p class="text-lg md:text-xl font-medium mb-8 fade-in text-white">Perjalanan suci dimulai dengan niat tulus di hati. Semoga perjalanan ini <br> menjadi pintu pembuka kebahagiaan dan kedamaian.</p>
+            <a href="#paket"><button class="bg-primary text-dark-blue font-medium text-lg px-6 py-3 rounded-md hover:bg-opacity-90 transition-all fade-in">Paket</button></a>
+        </div>
+    </div>
+    <!-- header -->
+
+    <!-- agensi -->
+    <div class="container mx-auto px-4 mt-16 md:mt-24">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <div class="relative">
+                    <img src="agency.png" alt="" class="w-full h-auto rounded-lg shadow-lg">
+                    <div class="absolute p-4 bottom-16 ml-16 md:bottom-32 md:ml-[200px] bg-white rounded-lg shadow-lg transform ">
+                        <div class="flex items-center">
+                            <img src="kaaba.png" alt="" class="w-12 h-12">
+                            <div class="ml-3">
+                                <p class="font-bold">PilgrimPaths</p>
+                                <p class="text-sm">Haji & Umrah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pl-8 mt-16 md:mt-0">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Agensi <br> Haji & Umrah</h1>
+                <p class="text-gray-600 font-medium mb-8">Selamat datang di PilgrimPaths! Temukan pengalaman Haji dan Umrah yang penuh berkah dengan layanan eksklusif kami. Dapatkan kenyamanan dan panduan berpengalaman dalam setiap langkah perjalanan. Manfaatkan promo spesial kami sekarang untuk pengalaman ibadah yang terjangkau dan tak terlupakan. Rencanakan perjalanan suci Anda sekarang bersama PilgrimPaths.</p>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-hotel text-dark-blue"></i>
+                        </div>
+                        <span>Hotel Booking</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-gift text-dark-blue"></i>
+                        </div>
+                        <span>Hajj Offers</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-passport text-dark-blue"></i>
+                        </div>
+                        <span>Visa processing</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-tag text-dark-blue"></i>
+                        </div>
+                        <span>Umrah Offers</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-map-marked-alt text-dark-blue"></i>
+                        </div>
+                        <span>Ziyarat Tours</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-2 mr-3">
+                            <i class="fas fa-suitcase text-dark-blue"></i>
+                        </div>
+                        <span>Umrah Packages</span>
+                    </div>
+                </div>
+
+                <a href="agensi.html"><button class="bg-primary text-dark-blue font-medium px-6 py-3 rounded-md hover:bg-opacity-90 transition-all">Learn More</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- agensi -->
+
+    <!-- packages -->
+    <div class="container mx-auto px-4 mt-16 md:mt-24" id="paket">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-12">PilgrimPaths Offering Packages</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="paket1.jpg" class="w-full h-48 object-cover" alt="...">
+          <div class="p-6">
+            <h5 class="text-xl font-medium mb-2">Hajj Packages 30 Nights<br><span class="text-sm text-green-600">Rp. 38,3 juta/orang</span></h5>
+            <hr class="my-4">
+            <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Visa</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Ticket</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Flight</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Hotel</label>
+              </div>
+            </div>
+            <p class="mb-2"><i class="fas fa-plane-departure mr-3 text-gray-600"></i>Halim Perdana Kusuma, CGK</p>
+            <p class="mb-4"><i class="fas fa-plane-arrival mr-3 text-gray-600"></i>BUIRA, KSA</p>
+            <a href="pakethaji1.html" class="block text-center bg-primary text-dark-blue font-medium py-2 rounded-md hover:bg-opacity-90 transition-all">View Details</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="pack3.jpg" class="w-full h-48 object-cover" alt="...">
+          <div class="p-6">
+            <h5 class="text-xl font-medium mb-2">Umrah Packages 15 Nights <br><span class="text-sm text-green-600">Rp. 40 juta/orang</span></h5>
+            <hr class="my-4">
+            <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Visa</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Ticket</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Flight</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Hotel</label>
+              </div>
+            </div>
+            <p class="mb-2"><i class="fas fa-plane-departure mr-3 text-gray-600"></i>Soekarno-Hatta, CGK</p>
+            <p class="mb-4"><i class="fas fa-plane-arrival mr-3 text-gray-600"></i>BUIRA, KSA</p>
+            <a href="paketumrah3.html" class="block text-center bg-primary text-dark-blue font-medium py-2 rounded-md hover:bg-opacity-90 transition-all">View Details</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="pack1.jpg" class="w-full h-48 object-cover" alt="...">
+          <div class="p-6">
+            <h5 class="text-xl font-medium mb-2">Umrah Packages 10 Nights <br><span class="text-sm text-green-600">Rp. 25 juta/orang</span></h5>
+            <hr class="my-4">
+            <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Visa</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Ticket</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Flight</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" checked class="mr-2 text-primary">
+                <label>Hotel</label>
+              </div>
+            </div>
+            <p class="mb-2"><i class="fas fa-plane-departure mr-3 text-gray-600"></i>Soekarno-Hatta, CGK</p>
+            <p class="mb-4"><i class="fas fa-plane-arrival mr-3 text-gray-600"></i>BUIRA, KSA</p>
+            <a href="paketumrah1.html" class="block text-center bg-primary text-dark-blue font-medium py-2 rounded-md hover:bg-opacity-90 transition-all">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="packages.html"><button class="bg-primary text-dark-blue font-medium px-6 py-3 rounded-md hover:bg-opacity-90 transition-all">All Packages</button></a>
+      </div>
+    </div>
+    <!-- packages -->
+
+     <!-- review -->
+    <div class="container mx-auto px-4 mt-16 md:mt-32">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4 md:mb-0">Review Pelanggan</h2>
+        <button class="bg-primary text-dark-blue font-medium px-6 py-3 rounded-md hover:bg-opacity-90 transition-all">Let's Talk</button>
+      </div>
+
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-500" id="review-slider">
+            <div class="w-full flex-shrink-0">
+              <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                  <img src="review1.jpg" alt="" class="w-full h-64 md:h-80 object-cover rounded-2xl mx-auto">
+                </div>
+                <div class="w-full md:w-1/2 px-4 md:px-8 text-lg">
+                  <p class="mb-4">"Saya memiliki pengalaman yang sangat positif saat menggunakan layanan dari PilgrimPaths untuk perjalanan ibadah Haji dan Umrah. Antarmuka situs webnya sangat user-friendly, memudahkan saya untuk menemukan informasi yang dibutuhkan dan melakukan pendaftaran dengan cepat."</p>
+                  <div class="flex items-center">
+                    <div class="flex text-yellow-400">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-gray-600">Ahmad Rizki</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex-shrink-0">
+              <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                  <img src="review2.jpg" alt="" class="w-full h-64 md:h-80 object-cover rounded-2xl mx-auto">
+                </div>
+                <div class="w-full md:w-1/2 px-4 md:px-8 text-lg">
+                  <p class="mb-4">"Paket-paket Haji dan Umrah yang ditawarkan oleh PilgrimPaths sangat komprehensif dan sesuai dengan kebutuhan saya. Harga yang transparan dan tidak ada biaya tersembunyi memberikan kepercayaan tambahan dalam proses perencanaan perjalanan saya."</p>
+                  <div class="flex items-center">
+                    <div class="flex text-yellow-400">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-gray-600">Siti Nurhaliza</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex-shrink-0">
+              <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                  <img src="review3.jpg" alt="" class="w-full h-64 md:h-80 object-cover rounded-2xl mx-auto">
+                </div>
+                <div class="w-full md:w-1/2 px-4 md:px-8 text-lg">
+                  <p class="mb-4">"Dengan PilgrimPaths, saya merasa bahwa perjalanan ibadah saya tidak hanya sekadar perjalanan fisik, tetapi juga pengalaman spiritual yang mendalam. Saya sangat merekomendasikan PilgrimPaths kepada siapa saja yang mencari layanan Haji dan Umrah yang berkualitas dan terpercaya."</p>
+                  <div class="flex items-center">
+                    <div class="flex text-yellow-400">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-gray-600">Budi Santoso</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-500 text-white rounded-full w-12 h-12 flex items-center justify-center md:left-4 hover:bg-gray-600 transition-colors" id="prev-review">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-500 text-white rounded-full w-12 h-12 flex items-center justify-center md:right-4 hover:bg-gray-600 transition-colors" id="next-review">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Slider indicators -->
+        <div class="flex justify-center mt-6 space-x-2">
+          <button class="w-3 h-3 rounded-full bg-primary review-indicator" data-slide="0"></button>
+          <button class="w-3 h-3 rounded-full bg-gray-300 review-indicator" data-slide="1"></button>
+          <button class="w-3 h-3 rounded-full bg-gray-300 review-indicator" data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+    <!-- review -->
+
+    <!-- faq -->
+    <div class="mt-16 md:mt-32">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q1">
+                <span class="font-medium">Apa paket-paket Haji dan <br> Umrah yang tersedia?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q1">
+                <p class="text-gray-600">Kami menyediakan beragam paket Haji dan Umrah dengan fasilitas yang berbeda, sesuai dengan kebutuhan dan anggaran Anda.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q2">
+                <span class="font-medium">Bagaimana cara pendaftaran dan <br> proses pembayaran?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q2">
+                <p class="text-gray-600">Pendaftaran dapat dilakukan secara online, dan proses pembayaran mudah melalui metode yang nyaman. Informasi lebih lanjut dapat ditemukan di situs web kami.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q3">
+                <span class="font-medium">Apa saja fasilitas yang disertakan <br> dalam paket perjalanan?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q3">
+                <p class="text-gray-600">Setiap paket perjalanan mencakup akomodasi, transportasi, dan panduan wisata, serta layanan lainnya untuk memastikan kenyamanan selama perjalanan Anda.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q4">
+                <span class="font-medium">Bagaimana sistem manajemen keselamatan dan kesehatan selama perjalanan?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q4">
+                <p class="text-gray-600">Kami memiliki sistem manajemen keselamatan dan kesehatan yang ketat untuk memastikan keamanan peziarah selama perjalanan Haji dan Umrah.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q5">
+                <span class="font-medium">Apakah terdapat panduan spiritual atau pembimbing agama selama perjalanan?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q5">
+                <p class="text-gray-600">Ya, kami menyediakan panduan spiritual dan pembimbing agama yang akan mendukung Anda selama ibadah.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q6">
+                <span class="font-medium">Bagaimana sistem komunikasi antara penyelenggara dan peziarah?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q6">
+                <p class="text-gray-600">Kami memiliki sistem komunikasi yang efisien melalui email, pesan teks, dan platform online lainnya untuk memberikan pembaruan dan informasi penting kepada peziarah.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q7">
+                <span class="font-medium">Apa saja dokumentasi atau persyaratan administratif yang diperlukan untuk pendaftaran?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q7">
+                <p class="text-gray-600">Dokumen dan persyaratan administratif yang diperlukan untuk pendaftaran dapat ditemukan di situs web kami.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q8">
+                <span class="font-medium">Apakah terdapat opsi untuk pelayanan tambahan atau penyesuaian paket perjalanan?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q8">
+                <p class="text-gray-600">Kami menyediakan opsi layanan tambahan dan penyesuaian paket perjalanan sesuai dengan kebutuhan Anda.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q9">
+                <span class="font-medium">Bagaimana proses penanganan keluhan atau masalah selama perjalanan?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q9">
+                <p class="text-gray-600">Kami memiliki prosedur yang jelas untuk menanggapi keluhan atau masalah peziarah selama perjalanan. Hubungi tim customer service kami untuk bantuan.</p>
+              </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none faq-button" data-target="q10">
+                <span class="font-medium">Apakah ada testimoni atau ulasan dari peziarah sebelumnya?</span>
+                <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="px-4 pb-4 hidden" id="q10">
+                <p class="text-gray-600">Anda dapat menemukan testimoni dan ulasan dari peziarah sebelumnya di situs web kami atau menghubungi kami untuk informasi lebih lanjut.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- faq -->
+
+    <!-- sponsor -->
+    <div class="container mx-auto px-4 mb-16 mt-16 md:mt-24">
+      <div class="flex flex-wrap justify-center items-center gap-8">
+        <div class="w-1/2 md:w-auto flex justify-center">
+          <img src="sponsor1.png" alt="" class="h-12 md:h-16 w-auto">
+        </div>
+        <div class="w-1/2 md:w-auto flex justify-center">
+          <img src="sponsor2.png" alt="" class="h-10 md:h-12 w-auto">
+        </div>
+        <div class="w-1/2 md:w-auto flex justify-center">
+          <img src="sponsor3.png" alt="" class="h-12 md:h-14 w-auto">
+        </div>
+        <div class="w-1/2 md:w-auto flex justify-center">
+          <img src="sponsor4.png" alt="" class="h-14 md:h-16 w-auto">
+        </div>
+        <div class="w-1/2 md:w-auto flex justify-center">
+          <img src="sponsor5.png" alt="" class="h-20 md:h-24 w-auto">
+        </div>
+      </div>
+    </div>
+    <!-- sponsor -->
+
+    <!-- footer -->
+    <footer class="bg-dark-blue text-white pt-12 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div class="lg:col-span-2">
+            <div class="flex items-center mb-6">
+              <img src="kaaba.png" alt="PilgrimPaths" class="h-12 w-12 bg-primary p-2 rounded-lg">
+              <span class="ml-3 text-xl font-semibold">PilgrimPaths</span>
+            </div>
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold mb-4">Subscribe Newsletter</h3>
+              <p class="text-gray-300 mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsam rem laboriosam reprehenderit tempora placeat natus officia suscipit atque aliquid!</p>
+              <form class="flex flex-col sm:flex-row gap-2" id="newsletter-form">
+                <input type="email" class="form-control px-4 py-2 rounded-md text-black flex-grow" id="exampleInputEmail1" placeholder="Masukkan Email" required>
+                <button type="submit" class="bg-primary text-dark-blue font-medium py-2 px-4 rounded-md hover:bg-opacity-90 transition-all">Subscribe</button>
+              </form>
+              <div id="newsletter-message" class="mt-2 text-green-400 hidden">Terima kasih telah berlangganan newsletter kami!</div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Link</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Haji & Umrah</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Fasilitas</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Tur Islamic</a></li>
+              <li><a href="galeri.html" class="text-gray-300 hover:text-primary transition-colors">Galeri</a></li>
             </ul>
           </div>
-          <div class="lgin">
-          <a href="login.html"><button type="button" class="btn">Log In</button></a>
-        </div>
-        </div>
-        </div>
-      </nav>
-    <!-- navbar -->
-
-    <!-- header -->
-    <div class="header container-fluid">
-        <div class="container text-center" style="padding-top: 180px;">
-            <h1 style="font-weight: 600; font-size: 50px; color: white;">PilgrimPaths<br>Menghubungkan Hati, Menginspirasi Perjalanan</h1>
-            <p style="color: white; font-weight: 500; font-size: 20px; margin-top: 20px;">Perjalanan suci dimulai dengan niat tulus di hati. Semoga perjalanan ini <br> menjadi pintu pembuka kebahagiaan dan kedamaian.</p>
-            <a href="#paket"><button type="button" class="btn" style="margin-top: 50px; background-color: rgb(194, 232, 84); font-weight: 500; font-size: 20px; width: 150px; color: black;">Paket</button></a>
-        </div>
-    </div>
-    <!-- header -->
-
-    <!-- agensi -->
-    <div class="container" style="margin-top: 100px;">
-        <div class="row">
-          <div class="col">
-            <div class="agency">
-              <div class="foto">
-                <img src="agency.png" alt="" style="height: 500px; margin-left: -32px;">
-              </div>  
-                <div class="webname" style="position: relative; top: -170px;">
-                    <img src="kaaba.png" alt="">
-                    <p style="margin-top: 10px;"><span style="font-weight: bold;">PilgrimPaths</span> <br><span style="font-size: 14px;">Haji & Umrah</span></p>                   
-                </div>
-            </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Offers</h4>
+            <ul class="space-y-2">
+              <li><a href="packages.html#pakethaji" class="text-gray-300 hover:text-primary transition-colors">Paket Haji</a></li>
+              <li><a href="packages.html#paketumrah" class="text-gray-300 hover:text-primary transition-colors">Paket Umrah</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Pedoman Haji</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Manajemen Haji</a></li>
+            </ul>
           </div>
-          <div class="col" style=" margin-left: -170px;">
-            <h1 style="font-weight: 700; font-size: 50px;">Agensi <br> Haji & Umrah</h1>
-            <p style="font-weight: 500; font-size: 15px; color: grey; margin-top: 30px;">Selamat datang di PilgrimPaths! Temukan pengalaman Haji dan Umrah yang penuh berkah dengan layanan eksklusif kami. Dapatkan kenyamanan dan panduan berpengalaman dalam setiap langkah perjalanan. Manfaatkan promo spesial kami sekarang untuk pengalaman ibadah yang terjangkau dan tak terlupakan. Rencanakan perjalanan suci Anda sekarang bersama PilgrimPaths.</p>
-
-            <div class="container" style="margin-top: 40px; font-size: 19px; font-weight: 500;">
-                <div class="row">
-                  <div class="col">
-                    1. Hotel Booking
-                  </div>
-                  <div class="col" style="margin-left: -100px;">
-                    2. Hajj Offers
-                  </div>
-                </div>
-
-                <div class="row" style="margin-top: 10px;">
-                  <div class="col">
-                    3. Visa processing
-                  </div>
-                  <div class="col" style="margin-left: -100px;">
-                    4. Umrah Offers
-                  </div>
-                </div>
-
-                <div class="row" style="margin-top: 10px;">
-                  <div class="col">
-                    5. Ziyarat Tours
-                  </div>
-                  <div class="col" style="margin-left: -100px;">
-                    6. Umrah Packages
-                  </div>
-                </div>
-
-                <a class="nav-link active" aria-current="page" href="agensi.html"><button type="button" class="btn" style="background-color: rgb(194, 232, 84); font-weight: 500; margin-top: 50px; width: 160px;">Learn More</button></a>
-
-              </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Tentang</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Kontak</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Lisensi</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Blogs</a></li>
+            </ul>
           </div>
         </div>
-      </div>
-    <!-- agensi -->
-
-    <!-- packages -->
-    <div class="container" style="margin-top: 150px;" id="paket">
-      <h2 style="font-weight: 600; text-align: center;">PilgrimPaths Offering Packages</h2>
-      <div class="row" style="margin-top: 50px;">
-        <div class="col">
-          <div class="card" style="width: 22rem;">
-          <img src="paket1.jpg" style="padding: 10px; border-radius: 15px;" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title" style="font-size: 20px; font-weight: 400;">Hajj Packages 30 Nights<br><p style="font-size: 15px; margin-top: 10px; color: green;">Rp. 38,3 juta/orang</p></h5>
-            <hr>
-            <p class="card-text">
-              <div class="check d-flex" style="font-size: 15px;">
-                <div class="form-check" style="font-size: 15px;">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Visa
-                  </label>
-                </div>
-            <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Ticket
-              </label>
-            </div>
-            <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Flight
-              </label>
-            </div>
-            <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Hotel
-              </label>
-            </div>
-          </div>
-          </p>
-
-          <p><i class="fi fi-rr-plane-departure" style="margin-right: 15px;"></i>Halim Perdana Kusuma, CGK</p>
-          <p><i class="fi fi-rr-plane-arrival" style="margin-right: 15px;"></i>BUIRA, KSA</p>
-            <a href="pakethaji1.html" class="btn">View Details</a>
-          </div>
-        </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 22rem;">
-            <img src="pack3.jpg" style="padding: 10px; border-radius: 15px;" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title" style="font-size: 20px; font-weight: 400;">Umrah Packages 15 Nights <br><p style="font-size: 15px; margin-top: 10px; color: green;">Rp. 40 juta/orang</p></h5>
-              <hr>
-              <p class="card-text">
-                <div class="check d-flex" style="font-size: 15px;">
-                  <div class="form-check" style="font-size: 15px;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                      Visa
-                    </label>
-                  </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Ticket
-                </label>
-              </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Flight
-                </label>
-              </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Hotel
-                </label>
-              </div>
-            </div>
-            </p>
-  
-            <p><i class="fi fi-rr-plane-departure" style="margin-right: 15px;"></i>Soekarno-Hatta, CGK</p>
-            <p><i class="fi fi-rr-plane-arrival" style="margin-right: 15px;"></i>BUIRA, KSA</p>
-              <a href="paketumrah3.html" class="btn">View Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 22rem;">
-            <img src="pack1.jpg" style="padding: 10px; border-radius: 15px;" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title" style="font-size: 20px; font-weight: 400;"> Umrah Packages 10 Nights <br><p style="font-size: 15px; margin-top: 10px; color: green;">Rp. 25 juta/orang</p></h5>
-              <hr>
-              <p class="card-text">
-                <div class="check d-flex" style="font-size: 15px;">
-                  <div class="form-check" style="font-size: 15px;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                      Visa
-                    </label>
-                  </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Ticket
-                </label>
-              </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Flight
-                </label>
-              </div>
-              <div class="form-check" style="margin-left: 20px; font-size: 15px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Hotel
-                </label>
-              </div>
-            </div>
-            </p>
-  
-            <p><i class="fi fi-rr-plane-departure" style="margin-right: 15px;"></i>Soekarno-Hatta, CGK</p>
-            <p><i class="fi fi-rr-plane-arrival" style="margin-right: 15px;"></i>BUIRA, KSA</p>
-              <a href="paketumrah1.html" class="btn">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="packbtn" style="text-align: center;">
-      <a href="packages.html"><button type="button" class="btn">All Packages</button></a>
-    </div>
-    </div>
-    <!-- packages -->
-
-    <!-- review -->
-    <div class="container" style="margin-top: 100px;">
-      <div class="teks d-flex justify-content-between">
-      <h2 style="font-weight: 600;">Review Pelanggan</h2>
-      <button type="button" class="btn" style="background-color: rgb(194, 232, 84); color: black; font-weight: 500;">Let's Talk</button>
-    </div>
-
-    <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 100px;">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <img src="review1.jpg" alt="" style="width: 450px; height: 300px; margin-left: 100px; border-radius: 25px;">
-              </div>
-              <div class="col" style="font-size: 20px; padding-top: 30px;">
-                "Saya memiliki pengalaman yang sangat positif saat menggunakan layanan dari PilgrimPaths untuk perjalanan ibadah Haji dan Umrah. Antarmuka situs webnya sangat user-friendly, memudahkan saya untuk menemukan <br> informasi yang dibutuhkan dan melakukan pendaftaran dengan cepat."
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <img src="review2.jpg" alt="" style="width: 450px; height: 300px; margin-left: 100px; border-radius: 25px;">
-              </div>
-              <div class="col" style="font-size: 20px; padding-top: 30px;">
-                "Paket-paket Haji dan Umrah yang ditawarkan oleh PilgrimPaths sangat komprehensif dan sesuai dengan kebutuhan saya. Harga yang transparan dan tidak ada biaya tersembunyi memberikan kepercayaan tambahan dalam proses perencanaan perjalanan saya."
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <img src="review3.jpg" alt="" style="width: 450px; height: 300px; margin-left: 100px; border-radius: 25px;">
-              </div>
-              <div class="col" style="font-size: 20px; padding-top: 30px;">
-                "Dengan PilgrimPaths, saya merasa bahwa perjalanan ibadah saya tidak hanya sekadar perjalanan fisik, tetapi juga pengalaman spiritual yang mendalam. Saya sangat merekomendasikan PilgrimPaths kepada siapa saja yang mencari layanan Haji dan Umrah yang berkualitas dan terpercaya."
-              </div>
-            </div>
-          </div>        
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="background-color: grey; height: 50px; width: 50px; margin-top: 140px; border-radius: 100%; padding-right: 5px;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="background-color: grey; height: 50px; width: 50px; margin-top: 140px; border-radius: 100%; padding-left: 5px;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    </div>
-    <!-- review -->
-
-    <!-- faq -->
-    <div class="faq" style="margin-top: 170px;">
-      <h2 class="text-center" style="font-weight: 600;">Frequently Asked Questions</h2>
-      <div class="container text-center" style="margin-top: 70px;">
-        <div class="row">
-          <div class="col">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">
-                    Apa paket-paket Haji dan <br> Umrah yang tersedia?
-                  </button>
-                </h2>
-                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Kami menyediakan beragam paket Haji dan Umrah dengan fasilitas yang berbeda, sesuai dengan kebutuhan dan anggaran Anda.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
-                    Bagaimana cara pendaftaran dan <br> proses pembayaran?
-                  </button>
-                </h2>
-                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Pendaftaran dapat dilakukan secara online, dan proses pembayaran mudah melalui metode yang nyaman. Informasi lebih lanjut dapat ditemukan di situs web kami.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
-                    Apa saja fasilitas yang disertakan <br> dalam paket perjalanan?
-                  </button>
-                </h2>
-                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Setiap paket perjalanan mencakup akomodasi, transportasi, dan panduan wisata, serta layanan lainnya untuk memastikan kenyamanan selama perjalanan Anda.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
-                    Bagaimana sistem manajemen keselamatan dan kesehatan selama perjalanan?
-                  </button>
-                </h2>
-                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Kami memiliki sistem manajemen keselamatan dan kesehatan yang ketat untuk memastikan keamanan peziarah selama perjalanan Haji dan Umrah.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">
-                    Apakah terdapat panduan spiritual atau pembimbing agama selama perjalanan?
-                  </button>
-                </h2>
-                <div id="q5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Ya, kami menyediakan panduan spiritual dan pembimbing agama yang akan mendukung Anda selama ibadah.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q6" aria-expanded="true" aria-controls="q6">
-                    Bagaimana sistem komunikasi antara penyelenggara dan peziarah?
-                  </button>
-                </h2>
-                <div id="q6" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Kami memiliki sistem komunikasi yang efisien melalui email, pesan teks, dan platform online lainnya untuk memberikan pembaruan dan informasi penting kepada peziarah.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7" aria-expanded="false" aria-controls="collapseTwo">
-                    Apa saja dokumentasi atau persyaratan administratif yang diperlukan untuk pendaftaran?
-                  </button>
-                </h2>
-                <div id="q7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Dokumen dan persyaratan administratif yang diperlukan untuk pendaftaran dapat ditemukan di situs web kami.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8" aria-expanded="false" aria-controls="q8">
-                    Apakah terdapat opsi untuk pelayanan tambahan atau penyesuaian paket perjalanan?
-                  </button>
-                </h2>
-                <div id="q8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Kami menyediakan opsi layanan tambahan dan penyesuaian paket perjalanan sesuai dengan kebutuhan Anda.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9" aria-expanded="false" aria-controls="q9">
-                    Bagaimana proses penanganan keluhan atau masalah selama perjalanan?
-                  </button>
-                </h2>
-                <div id="q9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Kami memiliki prosedur yang jelas untuk menanggapi keluhan atau masalah peziarah selama perjalanan. Hubungi tim customer service kami untuk bantuan.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q10" aria-expanded="false" aria-controls="q10">
-                    Apakah ada testimoni atau ulasan dari peziarah sebelumnya?
-                  </button>
-                </h2>
-                <div id="q10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Anda dapat menemukan testimoni dan ulasan dari peziarah sebelumnya di situs web kami atau menghubungi kami untuk informasi lebih lanjut.
-                  </div>
-                </div>
+        
+        <div class="mt-8 pt-8 border-t border-gray-700">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 PilgrimPaths. All rights reserved.</p>
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Location</h4>
+              <div class="flex flex-wrap gap-4">
+                <a href="#" class="text-gray-300 hover:text-primary transition-colors text-sm">Indonesia</a>
+                <a href="#" class="text-gray-300 hover:text-primary transition-colors text-sm">Qatar</a>
+                <a href="#" class="text-gray-300 hover:text-primary transition-colors text-sm">Bangladesh</a>
+                <a href="#" class="text-gray-300 hover:text-primary transition-colors text-sm">Cina</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- faq -->
-
-    <!-- sponsor -->
-    <div class="container text-center" style="margin-top: 100px;">
-      <div class="row">
-        <div class="col">
-          <img src="sponsor1.png" alt="" style="height: 70px; width: 200px;">
-        </div>
-        <div class="col">
-          <img src="sponsor2.png" alt="" style="height: 50px; width: 180px; margin-bottom: -50px;">
-        </div>
-        <div class="col">
-          <img src="sponsor3.png" alt="" style="height: 60px; width: 180px;">
-        </div>
-        <div class="col">
-          <img src="sponsor4.png" alt="" style="height: 80px; width: 250px;">
-        </div>
-        <div class="col">
-          <img src="sponsor5.png" alt="" style="height: 130px; width: 130px;margin-top: -25px;">
-        </div>
-      </div>
-    </div>
-    <!-- sponsor -->
-
-    <!-- footer -->
-    <div class="container-fluid" style="background-color: rgb(15, 38, 80); color: white; margin-top: 100px;">
-    <div class="container" style="padding-top: 50px;">
-      <div class="row">
-        <div class="col-6">
-          <div class="web">
-            <img src="kaaba.png" alt="" style="height: 50px; width: 50px; background-color: rgb(194, 232, 84); padding: 10px; border-radius: 10px;">
-            &nbsp; PilgrimPaths
-          </div>
-          <div class="subs" style="margin-top: 50px;">
-            <h3>Subscribe Newsletter</h3>
-            <p style="line-height: 30px;">Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. Eveniet ipsam rem laboriosam reprehenderit tempora placeat natus officia suscipit atque aliquid!</p>
-            <form>
-              <div class="mb-3 d-flex" style="margin-top: 30px;">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Email" style="width: 350px;" >
-                <button type="submit" class="btn btn-primary" style="background-color: rgb(194, 232, 84); color: black; font-weight: 500; border: none; margin-left: 25px;">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col" style="padding-top: 95px;">
-          Quick Link
-          <br><br>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Haji & Umrah</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Fasilitas</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Tur Islamic</a></p>
-          <p><a href="galeri.html" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Galeri</a></p>
-        </div>
-        <div class="col" style="padding-top: 95px;">
-          Offers
-          <br><br>
-          <p><a href="packages.html#pakethaji" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Paket Haji</a></p>
-          <p><a href="packages.html#paketumrah" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Paket Umrah</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Pedoman Haji</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Manajemen Haji</a></p>
-        </div>
-        <div class="col" style="padding-top: 95px;">
-          Company
-          <br><br>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Tentang</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Kontak</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Lisensi</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Blogs</a></p>
-        </div>
-        <div class="col" style="padding-top: 95px;">
-          Location
-          <br><br>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Indonesia</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Qatar</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Bangladesh</a></p>
-          <p><a href="#" style="text-decoration: none; color: gray; font-weight: 400; font-size: 15px;">Cina</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
     <!-- footer -->
 
-
-
-    
-    <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // FAQ accordion
+      document.querySelectorAll('.faq-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const target = document.getElementById(this.getAttribute('data-target'));
+          const icon = this.querySelector('.faq-icon');
+          
+          // Toggle the target content
+          target.classList.toggle('hidden');
+          
+          // Rotate the icon
+          icon.classList.toggle('rotate-180');
+          
+          // Close other FAQs
+          document.querySelectorAll('.faq-button').forEach(otherButton => {
+            if (otherButton !== this) {
+              const otherTarget = document.getElementById(otherButton.getAttribute('data-target'));
+              const otherIcon = otherButton.querySelector('.faq-icon');
+              otherTarget.classList.add('hidden');
+              otherIcon.classList.remove('rotate-180');
+            }
+          });
+        });
+      });
+      
+      // Review slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('#review-slider > div');
+      const totalSlides = slides.length;
+      const indicators = document.querySelectorAll('.review-indicator');
+      
+      function showSlide(index) {
+        const slider = document.getElementById('review-slider');
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+          if (i === index) {
+            indicator.classList.remove('bg-gray-300');
+            indicator.classList.add('bg-primary');
+          } else {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-gray-300');
+          }
+        });
+      }
+      
+      document.getElementById('prev-review').addEventListener('click', function() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      });
+      
+      document.getElementById('next-review').addEventListener('click', function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      });
+      
+      // Indicator clicks
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+      
+      // Auto-slide for reviews
+      setInterval(function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }, 5000);
+      
+      // Newsletter form submission
+      document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('exampleInputEmail1').value;
+        const message = document.getElementById('newsletter-message');
+        
+        // Show success message
+        message.classList.remove('hidden');
+        
+        // Clear form
+        document.getElementById('exampleInputEmail1').value = '';
+        
+        // Hide message after 3 seconds
+        setTimeout(function() {
+          message.classList.add('hidden');
+        }, 3000);
+      });
+      
+      // Navbar background on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          navbar.classList.add('shadow-lg');
+        } else {
+          navbar.classList.remove('shadow-lg');
+        }
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all sections
+      document.querySelectorAll('section, div[id]').forEach(section => {
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>
